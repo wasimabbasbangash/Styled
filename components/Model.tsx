@@ -26,4 +26,3 @@ function Model({model}:any) {
 }
 
 export default Model;
-
