@@ -1,8 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import { HiShoppingBag } from "react-icons/hi";
-import { NavStyle, Title, Cart } from "../styles/Nav";
+import { NavStyle, Title, CartStyle } from "../styles/Nav";
+// import { CartStyle } from "../styles/Nav";
+import Cart from "./Cart";
+import { ModelContext } from "../lib/Context";
+
 function Nav() {
+  const { showCart, setShowCart } = ModelContext();
+
   return (
     <NavStyle>
       <Title>
@@ -13,9 +19,10 @@ function Nav() {
         <h3>The Brand Of Your Choice.</h3>
       </Title>
       {/* <Animation> </Animation> */}
-      <Cart>
+      <CartStyle onClick={() => setShowCart(true)}>
         Cart <HiShoppingBag></HiShoppingBag>
-      </Cart>
+      </CartStyle>
+      {showCart && <Cart />}
     </NavStyle>
   );
 }

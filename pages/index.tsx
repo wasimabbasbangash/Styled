@@ -16,7 +16,7 @@ export default function Home() {
 
   if(error) return <p> ohh no.... {error.message}</p>
   const models = data.models.data;
-  console.log(models);
+  // console.log(models);
   return (
     <>
       <Head>
@@ -32,7 +32,7 @@ export default function Home() {
         <div >
           <Gallery>
           {models.map((item:any)=>{
-            return <Model key = {item.attributes.slug} model = {item}/>
+            return <Model key = {item.attributes.Slug} model = {item}/>
           })}
           </Gallery>
 

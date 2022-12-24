@@ -20,11 +20,10 @@ import { ModelContext } from "../../lib/Context";
 
 function ProductDetails() {
   // get context
-  const { quantity, increaseQty, decreaseQty, cart, addProductsToCart } =
-    ModelContext();
-  console.log("quantity", quantity);
+  const { qty, increaseQty, decreaseQty, onAdd } = ModelContext();
   //fetch slug
   const router = useRouter();
+  // console.log("slug", router.query.slug);
   // fetch graphql data
   const [results] = useQuery({
     query: GET_PRODUCT_QUERY,
@@ -59,24 +58,20 @@ function ProductDetails() {
         <p style={{ fontStyle: "italic" }}>{Description}</p>
         <QuantityButtons>
           <h3>Description:</h3>
-          {/* <span style={{ marginRight: "1rem" }}>{quantity}</span> */}
+          {/* <span style={{ marginRight: "1rem" }}>{qty}</span> */}
           <div className='quantitity-increment'>
             <AiFillMinusCircle
               onClick={decreaseQty}
               style={{ cursor: "pointer", marginLeft: "1rem" }}
             />
-            <p style={{ margin: ".5rem" }}> {quantity}</p>
+            <p style={{ margin: ".5rem" }}> {qty}</p>
             <AiFillPlusCircle
               onClick={increaseQty}
               style={{ cursor: "pointer" }}
             />
           </div>
         </QuantityButtons>
-        <CartButton
-          onClick={() =>
-            addProductsToCart(data.models.data[0].attributes, quantity)
-          }
-        >
+        <CartButton onClick={() => onAdd(data.models.data[0].attributes, qty)}>
           Add to cart
         </CartButton>
       </ProductInfo>

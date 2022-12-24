@@ -6,6 +6,7 @@ export const ModelStyle = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  transition: all 0.4s ease-in-out;
 
   img {
     width: 100%;
@@ -18,6 +19,7 @@ export const ModelStyle = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    z-index: 100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 `;

@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const NavStyle = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  /* margin: 1rem 2rem; */
   align-content: space;
 `;
 
@@ -27,7 +28,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Cart = styled.div`
+export const CartStyle = styled.div`
   font-size: larger;
   color: #434343a6;
   margin-top: 0.4rem;
