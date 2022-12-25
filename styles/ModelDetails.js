@@ -11,7 +11,10 @@ export const DetailPage = styled.div`
 
 export const ProductInfo = styled.div`
   width: 100%;
-  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 2rem;
   h1 {
     margin-bottom: 10px;
   }
@@ -19,6 +22,11 @@ export const ProductInfo = styled.div`
     color: grey;
     text-overflow: clip;
   }
+`;
+export const QuantityAndAddButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 export const QuantityButtons = styled.div`
@@ -47,4 +55,6 @@ export const CartButton = styled.button`
 export const Price = styled.span`
   float: right;
   font-weight: bold;
+  text-align: center;
+  justify-content: center;
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+const { motion } = require("framer-motion");
 
 export const NavStyle = styled.div`
   display: flex;
@@ -6,11 +7,11 @@ export const NavStyle = styled.div`
   padding: 1rem 2rem;
   /* margin: 1rem 2rem; */
   align-content: space;
+  border-bottom: 1px solid #ddd3d3;
 `;
 
 export const Title = styled.div`
   display: flex;
-  line-height: 2rem;
   justify-content: flex-start;
   align-content: center;
   h2 {
@@ -27,11 +28,32 @@ export const Title = styled.div`
     /* overflow: hidden; */
   }
 `;
+export const Quantitity = styled(motion.div)`
+  height: 1rem !important;
+  position: absolute;
+  width: 1rem;
+  background: #fb1c3b;
+  font-size: 10px;
+  padding: 0.1rem 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 55%;
+  top: 15%;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+`;
 
 export const CartStyle = styled.div`
-  font-size: larger;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #434343a6;
   margin-top: 0.4rem;
+  svg {
+    font-size: 2rem;
+  }
 `;
 
 // export const Animation = styled.div`

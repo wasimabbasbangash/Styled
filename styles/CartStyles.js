@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const CartWrapper = styled.div`
+const { motion } = require("framer-motion");
+
+export const CartWrapper = styled(motion.div)`
   position: fixed;
   right: 0;
   left: 0;
@@ -14,14 +16,14 @@ export const CartWrapper = styled.div`
   /* display: none; */
 `;
 
-export const CartStyle = styled.div`
+export const CartStyle = styled(motion.div)`
   background: white;
-  width: 40%;
+  width: 30%;
   position: relative;
   overflow-y: scroll;
 `;
 
-export const EmptyElement = styled.div`
+export const EmptyElement = styled(motion.div)`
   display: flex;
   color: #535353;
   flex-direction: column;
@@ -31,12 +33,12 @@ export const EmptyElement = styled.div`
   height: 100%;
   transform: translate(0, -5%);
   svg {
-    font-size: 10rem;
+    font-size: 6rem;
     color: #535353;
   }
 `;
 
-export const CartCard = styled.div`
+export const CartCard = styled(motion.div)`
   display: flex;
   width: 95%;
   padding: 1rem 3rem;
@@ -49,10 +51,11 @@ export const CartCard = styled.div`
     rgb(56 56 56 / 4%) 0px 10px 10px -5px;
 `;
 
-export const CardModel = styled.div`
-  width: 100%;
-  padding: 2rem 3rem;
-  border-radius: 1rem;
+export const CardModel = styled(motion.div)`
+  width: 95%;
+  padding: 1rem 1rem;
+  /* border-radius: 1rem; */
+  border-bottom: 1px solid #8080806b;
   /* background-color: white; */
   /* background: #white; */
 
@@ -60,11 +63,11 @@ export const CardModel = styled.div`
   justify-content: space-between;
 `;
 
-export const CartCardImage = styled.div`
-  width: 40%;
+export const CartCardImage = styled(motion.div)`
+  width: 20% !important;
 `;
 
-export const CartCardDetails = styled.div`
+export const CartCardDetails = styled(motion.div)`
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -74,7 +77,7 @@ export const CartCardDetails = styled.div`
   /* justify-content: center; */
 `;
 
-export const Quantity = styled.div`
+export const Quantity = styled(motion.div)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -89,11 +92,32 @@ export const Quantity = styled.div`
   }
 `;
 
-export const Hr = styled.div`
+export const Hr = styled(motion.div)`
   display: block;
   height: 1px;
-  border: 0;
+  border: 1px solid red;
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 `;
+
+export const Checkout = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  /* margin: auto; */
+  color: #535353;
+
+  button {
+    background-color: #535353;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+`;
+
+export const MotionCard = styled(motion.div)``;

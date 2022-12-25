@@ -12,6 +12,7 @@ import {
   QuantityButtons,
   CartButton,
   Price,
+  QuantityAndAddButton,
 } from "../../styles/ModelDetails";
 
 // import Context
@@ -46,34 +47,46 @@ function ProductDetails() {
     <DetailPage>
       <img
         src={
-          `http://localhost:1337` + Image.data[0].attributes.formats.large.url
+          `http://localhost:1337` + Image.data[0].attributes.formats.small.url
         }
       />
       <ProductInfo>
-        <h1>{Title}</h1>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <p>Description</p>
-          <Price>{Fee} €</Price>
-        </div>
-        <p style={{ fontStyle: "italic" }}>{Description}</p>
-        <QuantityButtons>
-          <h3>Description:</h3>
-          {/* <span style={{ marginRight: "1rem" }}>{qty}</span> */}
-          <div className='quantitity-increment'>
-            <AiFillMinusCircle
-              onClick={decreaseQty}
-              style={{ cursor: "pointer", marginLeft: "1rem" }}
-            />
-            <p style={{ margin: ".5rem" }}> {qty}</p>
-            <AiFillPlusCircle
-              onClick={increaseQty}
-              style={{ cursor: "pointer" }}
-            />
+        <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <h1>{Title}</h1>
+            <Price>{Fee} €</Price>
           </div>
-        </QuantityButtons>
-        <CartButton onClick={() => onAdd(data.models.data[0].attributes, qty)}>
-          Add to cart
-        </CartButton>
+          <p>Description</p>
+          <p style={{ fontStyle: "italic" }}>{Description}</p>
+        </div>
+        <QuantityAndAddButton>
+          <QuantityButtons>
+            <p>Quantity:</p>
+            {/* <span style={{ marginRight: "1rem" }}>{qty}</span> */}
+            <div className='quantitity-increment'>
+              <AiFillMinusCircle
+                onClick={decreaseQty}
+                style={{ cursor: "pointer", marginLeft: "1rem" }}
+              />
+              <p style={{ margin: ".5rem" }}> {qty}</p>
+              <AiFillPlusCircle
+                onClick={increaseQty}
+                style={{ cursor: "pointer" }}
+              />
+            </div>
+          </QuantityButtons>
+          <CartButton
+            onClick={() => onAdd(data.models.data[0].attributes, qty)}
+          >
+            Add to cart
+          </CartButton>
+        </QuantityAndAddButton>
       </ProductInfo>
     </DetailPage>
   );
