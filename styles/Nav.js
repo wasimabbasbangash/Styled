@@ -34,7 +34,7 @@ export const Title = styled.div`
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
-    background: hsl(200 100% 80%);
+    background: hsl(213deg 100% 50% / 69%);
     z-index: -1;
     transition: transform 0.3s ease;
   }
