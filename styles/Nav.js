@@ -14,6 +14,36 @@ export const Title = styled.div`
   display: flex;
   justify-content: flex-start;
   align-content: center;
+
+  h1::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+
+  h1 {
+    position: relative;
+    font-size: 3rem;
+  }
+
   h2 {
     font-weight: bold;
     margin: 0 1rem;
@@ -51,8 +81,24 @@ export const CartStyle = styled.div`
   justify-content: center;
   color: #434343a6;
   margin-top: 0.4rem;
+  padding: 0.5rem 1.5rem;
   svg {
     font-size: 2rem;
+  }
+  :hover {
+    cursor: pointer;
+    color: #14213d;
+    scale: 1.2;
+  }
+`;
+
+export const ProfileAndCart = styled.div`
+  display: flex;
+  justify-content: space-between;
+  color: #e5e5e5;
+
+  svg {
+    font-size: 1.8rem;
   }
 `;
 

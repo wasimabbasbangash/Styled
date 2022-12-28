@@ -48,7 +48,8 @@ export const CartButton = styled.button`
   justify-content: center;
   width: 100%;
   color: white;
-  background-color: black;
+  background-color: #535353;
+  border: none;
   cursor: pointer;
 `;
 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 // import react icons
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
@@ -21,7 +21,12 @@ import { ModelContext } from "../../lib/Context";
 
 function ProductDetails() {
   // get context
-  const { qty, increaseQty, decreaseQty, onAdd } = ModelContext();
+  const { qty, setQuantity, increaseQty, decreaseQty, onAdd } = ModelContext();
+
+  // set count to 1 when component loads
+  useEffect(() => {
+    setQuantity(1);
+  }, []);
   //fetch slug
   const router = useRouter();
   // console.log("slug", router.query.slug);
