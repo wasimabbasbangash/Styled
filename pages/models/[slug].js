@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 // import react icons
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
-
+import { toast } from "react-hot-toast";
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 // importing styles
@@ -48,6 +48,20 @@ function ProductDetails() {
   // console.log(
   //   `http://localhost:1337` + Image.data[0].attributes.formats.large.url
   // );
+
+  const makeToast = (type) => {
+    switch (type) {
+      case "success":
+        toast.success(` ${Title} added to your cart`, { duration: 1500 });
+        break;
+      case "minimum_quantity":
+        toast.error(`Product Quantity can not be less than 1`, {
+          duration: 1500,
+        });
+        break;
+    }
+  };
+
   return (
     <DetailPage>
       <img
@@ -76,7 +90,10 @@ function ProductDetails() {
             {/* <span style={{ marginRight: "1rem" }}>{qty}</span> */}
             <div className='quantitity-increment'>
               <AiFillMinusCircle
-                onClick={decreaseQty}
+                onClick={() => {
+                  decreaseQty();
+                  if (qty === 1) makeToast("minimum_quantity");
+                }}
                 style={{ cursor: "pointer", marginLeft: "1rem" }}
               />
               <p style={{ margin: ".5rem" }}> {qty}</p>
@@ -87,7 +104,10 @@ function ProductDetails() {
             </div>
           </QuantityButtons>
           <CartButton
-            onClick={() => onAdd(data.models.data[0].attributes, qty)}
+            onClick={() => {
+              onAdd(data.models.data[0].attributes, qty);
+              makeToast("success");
+            }}
           >
             Add to cart
           </CartButton>
