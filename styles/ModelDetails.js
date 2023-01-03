@@ -5,7 +5,7 @@ export const DetailPage = styled.div`
   display: flex;
   justify-content: space-between;
   img {
-    width: 40%;
+    width: 30%;
   }
 `;
 

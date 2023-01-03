@@ -7,6 +7,7 @@ import {
   CartStyle,
   Quantitity,
   ProfileAndCart,
+  CartHover,
 } from "../styles/Nav";
 import Cart from "./Cart";
 import { ModelContext } from "../lib/Context";
@@ -20,7 +21,6 @@ const { AnimatePresence, motion } = require("framer-motion");
 function Nav() {
   const { showCart, setShowCart, totalQuantities } = ModelContext();
   const { user, error, isLoading } = useUser();
-  console.log(user);
   return (
     <NavStyle>
       <Title style={{ display: "flex", alignItems: "center" }}>
@@ -31,13 +31,13 @@ function Nav() {
         </>
         <>
           <h2> | </h2>
-          <h3>The Brand Of Your Choice.</h3>
+          <h5>Order Posters to your doorstep.</h5>
         </>
       </Title>
       {/* <Animation> </Animation> */}
       <ProfileAndCart>
         <User />
-        <div
+        <CartHover
           onClick={() => setShowCart(true)}
           style={{ position: "relative", display: "flex" }}
         >
@@ -50,7 +50,7 @@ function Nav() {
             <HiShoppingBag></HiShoppingBag>
             <p>Cart</p>
           </CartStyle>
-        </div>
+        </CartHover>
       </ProfileAndCart>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </NavStyle>

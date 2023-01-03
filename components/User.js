@@ -25,7 +25,7 @@ function User() {
 }
 
 const Profile = styled.div`
-  font-size: medium;
+  font-size: small;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +34,7 @@ const Profile = styled.div`
   margin-top: 0.4rem;
   padding: 0.5rem 1.5rem;
   svg {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   :hover {
     cursor: pointer;

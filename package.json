@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^2.0.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.2",
     "@next/font": "13.0.7",
     "@strapi/provider-upload-cloudinary": "^4.5.4",
     "@stripe/react-stripe-js": "^1.16.1",

@@ -1,10 +1,11 @@
+import { style } from "@mui/system";
 import styled from "styled-components";
 const { motion } = require("framer-motion");
 
 export const NavStyle = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   /* margin: 1rem 2rem; */
   align-content: space;
   border-bottom: 1px solid #ddd3d3;
@@ -34,14 +35,14 @@ export const Title = styled.div`
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
-    background: hsl(213deg 100% 50% / 69%);
+    background: hsl(213deg 79% 81% / 69%);
     z-index: -1;
     transition: transform 0.3s ease;
   }
 
   h1 {
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   h2 {
@@ -49,7 +50,7 @@ export const Title = styled.div`
     margin: 0 1rem;
     color: #434343a6;
   }
-  h3 {
+  h5 {
     color: #434343a6;
     font-style: italic;
     font-family: monospace;
@@ -59,32 +60,34 @@ export const Title = styled.div`
   }
 `;
 export const Quantitity = styled(motion.div)`
-  height: 1rem !important;
+  height: 0.8rem !important;
   position: absolute;
-  width: 1rem;
+  width: 0.8rem;
   background: #fb1c3b;
   font-size: 10px;
   padding: 0.1rem 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 55%;
+  left: 45%;
   top: 15%;
   /* border: 1px solid black; */
   border-radius: 50%;
 `;
 
 export const CartStyle = styled.div`
-  font-size: medium;
+  font-size: small;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #434343a6;
   margin-top: 0.4rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   svg {
     font-size: 2rem;
   }
+`;
+export const CartHover = styled.div`
   :hover {
     cursor: pointer;
     color: #14213d;
@@ -98,7 +101,7 @@ export const ProfileAndCart = styled.div`
   color: #e5e5e5;
 
   svg {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 `;
 
