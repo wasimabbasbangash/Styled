@@ -1,7 +1,7 @@
 {
   "name": "styled-frontend",
   "version": "0.1.0",
-  "homepage": "https://wasimabbasbangash.github.io/Styled",
+  "homepage": "https://wasimabbasbangash.github.io/Styled.git",
   "private": true,
   "scripts": {
     "dev": "next dev",
