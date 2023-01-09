@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ![alt text](https://www.dropbox.com/s/3acd4stt6pct7fp/poster-add-to-cart.jpg?dl=0)
 ![alt text](https://www.dropbox.com/s/eug3hay1bdnp3ul/cart.jpg?dl=0)
 ![alt text](https://www.dropbox.com/s/ffv71r4qfjnjbql/payment%20page.jpg?dl=0)
+
+<img src="https://www.dropbox.com/s/fvvmjweua4qc8jf/auth.jpg?dl=0" alt="Alt text" title="Optional title">
